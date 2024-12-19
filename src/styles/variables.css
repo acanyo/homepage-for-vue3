@@ -1,0 +1,30 @@
+:root {
+  /* 主色调 - 深邃帅气的蓝色系 */
+  --primary-gradient: linear-gradient(135deg, #1E3C72 0%, #2A5298 100%);
+  --primary-color: #1E3C72;
+  --primary-light: #2A5298;
+  --primary-dark: #0F2350;
+  
+  /* 背景色 - 高级灰蓝 */
+  --bg-gradient: linear-gradient(120deg, #2B4C7D 0%, #1A1A2E 100%);
+  --bg-color: #1A1A2E;
+  --bg-light: #2B4C7D;
+  --bg-dark: #151515;
+  
+  /* 文字颜色 */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B8C6DB;
+  --text-light: #E2E8F0;
+  
+  /* 特效颜色 */
+  --glow-color: rgba(30, 60, 114, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  
+  /* 动画时间 */
+  --transition-speed: 0.3s;
+  
+  /* 添加状态颜色 */
+  --status-online: #38B2AC;  /* 在线时的青绿色 */
+  --status-offline: #718096; /* 离线时的优雅灰色 */
+  --status-transition: all 0.3s ease; /* 状态切换动画 */
+} 

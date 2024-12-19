@@ -1,0 +1,73 @@
+.card {
+  background: rgba(30, 60, 114, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 4px 15px var(--shadow-color),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-speed);
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 8px 25px var(--shadow-color),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.container {
+  background: var(--bg-gradient);
+  padding: 2rem;
+  border-radius: 12px;
+  position: relative;
+  color: var(--text-primary);
+}
+
+/* 添加装饰元素 */
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  filter: blur(50px);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.container::before {
+  top: -20px;
+  left: -20px;
+}
+
+.container::after {
+  bottom: -20px;
+  right: -20px;
+} 

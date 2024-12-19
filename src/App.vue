@@ -16,12 +16,12 @@
     <div class="main" v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1 }" :duration="1000">
       <div class="info">
         <div class="header">
-          <img src="https://i.p-i.vip/43/20240913-66e403f2331ec.webp" alt="">
+          <img src="http://q.qlogo.cn/headimg_dl?dst_uin=30819792&amp;spec=640&amp;img_type=jpg" alt="">
         </div>
 
         <div class="infoText">
           <h1>Hi,</h1>
-          <h1>I'm <span class="qn">鹊楠</span></h1>
+          <h1>I'm <span class="qn">Handsome</span></h1>
         </div>
       </div>
 
@@ -55,7 +55,7 @@
     </div>
 
     <div class="footer">
-      By Quenan | ©2024
+      By Handsome | ©2024
     </div>
 
     <vs-dialog overlay-blur width="550px" not-center v-model="active">
@@ -268,5 +268,207 @@ export default {
 
 <style lang="less">
 @import url(//at.alicdn.com/t/c/font_4685493_lrpbngzgvbk.css);
-/* 阿里巴巴图标库 */
+@import './styles/variables.css';
+@import './styles/buttons.css';
+@import './styles/containers.css';
+
+// 背景网格优化
+.bgGrid {
+  .Grid {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// 主要内容区域
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  position: relative;
+  z-index: 1;
+
+  // 个人信息区域
+  .info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+    // 头像容器
+    .header {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.2rem;
+      position: relative;
+      border-radius: 50%;
+      padding: 2px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #FE8599;
+        border-radius: 50%;
+        bottom: 6px;
+        right: 6px;
+        box-shadow: 0 0 0 2px rgba(254, 133, 153, 0.3);
+        animation: breath 2s ease-in-out infinite;
+        z-index: 2;
+      }
+    }
+
+    // 文字区域
+    .infoText {
+      h1 {
+        font-size: 2.5rem;
+        margin: 0.3rem 0;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        
+        .qn {
+          position: relative;
+          display: inline-block;
+          background-image: linear-gradient(
+            to right,
+            #ff8a00,
+            #e52e71,
+            #ff8a00
+          );
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shine 3s linear infinite;
+        }
+      }
+    }
+  }
+
+  // 打字机效果区域
+  .typewriter {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+
+    .iconfont {
+      font-size: 1.2rem;
+      margin: 0 0.4rem;
+      opacity: 0.8;
+      display: inline-block;
+    }
+
+    .vue-typed {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  // 按钮区域
+  .btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+
+    a {
+      text-decoration: none;
+      
+      .vs-button {
+        min-width: 50px;  // 所有按钮都使用相同的尺寸
+        width: 50px;      // 固定宽度
+        height: 50px;     // 固定高度
+        padding: 0;
+        border-radius: 50%;  // 所有按钮都是圆形
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .vs-button__content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .iconfont {
+          font-size: 22px;
+          margin: 0;  // 移除图标间距
+        }
+
+        span {
+          display: none;  // 隐藏所有文字
+        }
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+      
+      &:active {
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+// 页脚
+.footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+}
+
+// 动画效果
+@keyframes breath {
+  0% {
+    box-shadow: 0 0 0 0 rgba(254, 133, 153, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(254, 133, 153, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(254, 133, 153, 0);
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
 </style>
